@@ -1,0 +1,15 @@
+{
+  "name": "2021-07-27-rollup-multi-entry-repro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@rollup/plugin-multi-entry": "^4.1.0",
+    "rollup": "^2.54.0"
+  }
+}

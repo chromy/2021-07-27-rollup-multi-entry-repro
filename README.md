@@ -3,15 +3,11 @@
 The [`--waitForBundleInput`](https://rollupjs.org/guide/en/#--waitforbundleinput)
 `rollup` command line option and the [`@rollup/plugin-multi-entry`](https://github.com/rollup/plugins/tree/master/packages/multi-entry) plugin do not work together.
 
-
-Actual behaviour:
+# Repro instructions
 ```
-➜  node node_modules/.bin/rollup -c rollup_plus_multi.config.js --waitForBundleInput
-
-bar.js → bundle.js...
-(!) Generated an empty chunk
-_virtual_multi-entry
-created bundle.js in 8ms
+git clone https://github.com/chromy/2021-07-27-rollup-multi-entry-repro.git
+cd 2021-07-27-rollup-multi-entry-repro
+node node_modules/.bin/rollup -c rollup_plus_multi.config.js --waitForBundleInput
 ```
 
 Expected behaviour:
@@ -25,3 +21,15 @@ bar.js → bundle.js...
 waiting for input bar.js...
 ^C⏎
 ```
+
+Actual behaviour:
+```
+➜  node node_modules/.bin/rollup -c rollup_plus_multi.config.js --waitForBundleInput
+
+bar.js → bundle.js...
+(!) Generated an empty chunk
+_virtual_multi-entry
+created bundle.js in 8ms
+```
+
+
